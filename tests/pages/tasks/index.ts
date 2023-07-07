@@ -42,25 +42,6 @@ export class TasksPage {
 
         let indexAssento = 0;
 
-
-        while (true) {
-            let assento = `#seat_${indexAssento}`;
-            const elementHandle = await this.page.$(assento);
-
-            if (elementHandle) {
-                const boundingBox = await elementHandle.boundingBox();
-                const isEnabled = await elementHandle.isEnabled();
-
-                if (boundingBox && isEnabled && boundingBox.x >= 0 && boundingBox.y >= 0) {
-                    await elementHandle.click();
-                    break;
-                }
-            }
-
-            indexAssento += 1;
-        }
-
-
         // while (true) {
         //     let assento = `#seat_${indexAssento}`;
         //     try {
